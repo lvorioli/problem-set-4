@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.surroundMe("<<>>", "abc"));
+		System.out.println(ps4.endsMeet("basketball", 3));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -31,6 +31,15 @@ public class ProblemSet4 {
 		}
 		else {
 			return out.substring(0, 2) + in + out.substring(2);
+		}
+	}
+	
+	public String endsMeet(String str, int n) {
+		if(str.isEmpty() || str.length() < 1 || str.length() > 10 || n < 1|| n > str.length()) {
+			return "null";
+		}
+		else {
+			return str.substring(0, n) + str.substring(str.length() - n);
 		}
 	}
 }
