@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.middleMan("programming"));
+		System.out.println(ps4.doubleVision("qwerty"));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -49,6 +49,19 @@ public class ProblemSet4 {
 		}
 		else {
 			return str.substring(((str.length() - 1) / 2) - 1, ((str.length() - 1) / 2) + 2);
+		}
+	}
+	
+	public String doubleVision(String str) {
+		if(str.isEmpty()) {
+			return "null";
+		}
+		else {
+			String fstr = "";
+			for(int x = 0; x < str.length(); x++) {
+				fstr = fstr + str.charAt(x) + str.charAt(x);
+			}
+			return fstr;
 		}
 	}
 }
