@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.doubleVision("qwerty"));
+		System.out.println(ps4.centered("ddskates", "ska"));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -62,6 +62,29 @@ public class ProblemSet4 {
 				fstr = fstr + str.charAt(x) + str.charAt(x);
 			}
 			return fstr;
+		}
+	}
+	
+	public boolean centered(String str, String target) {
+		if(str.isEmpty() || target.isEmpty() || target.length() != 3) {
+			return false;
+		}
+		else if(str.length() % 2 == 1) {
+			if(target.equals(str.substring(((str.length() - 1) / 2) - 1, ((str.length() - 1) / 2) + 2))) {
+				return true;
+			}
+			else {
+				return false;
+			}
+				
+		}
+		else {
+			if((target.equals(str.substring((str.length() / 2) - 2, (str.length() / 2) + 1))) || (target.equals(str.substring((str.length() / 2) - 1, (str.length() / 2) + 2)))) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 }
