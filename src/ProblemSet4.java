@@ -21,6 +21,16 @@
 public class ProblemSet4 {
 	
 	public static void main(String[] args) {
-		
+		ProblemSet4 ps4 = new ProblemSet4();
+		System.out.println(ps4.surroundMe("<<>>", "abc"));
+	}
+	
+	public String surroundMe(String out, String in) {
+		if(out.isEmpty() || in.isEmpty() || out.length() != 4 || in.length() != 3) {
+			return "null";
+		}
+		else {
+			return out.substring(0, 2) + in + out.substring(2);
+		}
 	}
 }
