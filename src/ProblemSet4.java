@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.upOrDown(34324.5334, 'f'));
+		System.out.println(ps4.countMe("hi there harri "));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -105,6 +105,21 @@ public class ProblemSet4 {
 		}
 		else {
 			return -1;
+		}
+	}
+	
+	public int countMe(String text, char end) {
+		if(text.isEmpty()) {
+			return -1;
+		}
+		else {
+			int count = 0;
+			for(int i = 0; i < text.length(); i++) {
+				if(text.charAt(x + 1) == ' ' && text.charAt(x) = end) {
+					count++;
+				}
+			}
+			return count;
 		}
 	}
 }
