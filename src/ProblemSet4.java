@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.centered("ddskates", "ska"));
+		System.out.println(ps4.upOrDown(34324.5334, 'f'));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -85,6 +85,26 @@ public class ProblemSet4 {
 			else {
 				return false;
 			}
+		}
+	}
+	
+	public int upOrDown(double number, char operation) {
+		if(operation == 'r') {
+			if(number - (int) number >= .5) {
+				return (int) number + 1;
+			}
+			else {
+				return (int) number;
+			}
+		}
+		else if(operation == 'f') {
+			return (int) number;
+		}
+		else if(operation == 'c') {
+			return (int) number + 1;
+		}
+		else {
+			return -1;
 		}
 	}
 }
