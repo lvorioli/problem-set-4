@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.isNotEqual("is not is not is not"));
+		System.out.println(ps4.triplets("aaabbbbccccc"));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -179,6 +179,30 @@ public class ProblemSet4 {
 			else {
 				return false;
 			}
+		}
+	}
+	
+	public int triplets(String str) {
+		boolean valid = true;
+		int count = 0;
+		for(int i = 0; i < str.length(); i++) {
+			if(Character.isWhitespace(str.charAt(i)) == true|| Character.isLetter(str.charAt(i)) == false) {
+				valid = false;
+			}
+		}
+		if(str.isEmpty() || valid == false) {
+			return -1;
+		}
+		else {
+			for(int i = 0; i < str.length(); i++) {
+				if(i < str.length() - 2) {
+					char letter = str.charAt(i);
+					if(letter == str.charAt(i + 1) && letter == str.charAt(i + 2)) {
+						count++;
+					}
+				}
+			}
+			return count;
 		}
 	}
 }
