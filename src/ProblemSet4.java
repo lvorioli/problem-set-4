@@ -226,22 +226,27 @@ public class ProblemSet4 {
 				}
 			}
 			else {
-				boolean reset = false;
+				boolean reset = true;
 				String numTemp = "";
 				for(int i = 0; i < str.length(); i++) {
 					if(Character.isDigit(str.charAt(i))) {
 						if(reset == true) {
-							numTemp = str.substring(i, i + 1);
+							numTemp = String.valueOf(str.charAt(i));
 							reset = false;
 						}
 						else {
-							numTemp = numTemp + str.substring(i, i + 1);
+							numTemp = numTemp + String.valueOf(str.charAt(i));
+							if(i == str.length() - 1) {
+								sum += Integer.parseInt(numTemp);
+							}
 						}
 					}
 					else {
 						reset = true;
+						if(numTemp.equals("") == false) {
+							sum += Integer.parseInt(numTemp);
+						}
 					}
-					sum += Integer.parseInt(numTemp);
 				}
 			}
 			return sum;
