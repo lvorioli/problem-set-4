@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.countMe("one more batch of sample words", '+'));
+		System.out.println(ps4.isNotEqual("is not is not is not"));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -125,6 +125,60 @@ public class ProblemSet4 {
 				}
 			}
 			return count;
+		}
+	}
+	
+	public boolean isNotEqual(String str) {
+		if(str.isEmpty()) {
+			return false;
+		}
+		else {
+			int isCount = 0;
+			int notCount = 0;
+			for(int i = 0; i < str.length(); i++) {
+				if(i == str.length() - 2) {
+					if(str.charAt(i) == 'i' && str.charAt(i + 1) == 's' && str.charAt(i - 1) == ' ') {
+						isCount++;
+					}
+				}
+				else if(i == 0) {
+					String substr = str.substring(i, i + 2);
+					if(substr.equals("is")) {
+						isCount++;
+					}
+				}
+				else if(i != str.length() - 1) {
+					String substr = str.substring(i, i + 2);
+					if(substr.equals("is") && str.charAt(i - 1) == ' ') {
+						isCount++;
+					}
+				}
+			}
+			for(int i = 0; i < str.length(); i++) {
+				if(i == str.length() - 3) {
+					if(str.charAt(i) == 'n' && str.charAt(i + 1) == 'o' && str.charAt(i + 2) == 't' && str.charAt(i - 1) == ' ') {
+						notCount++;
+					}
+				}
+				else if(i == 0) {
+					String substr = str.substring(i, i + 3);
+					if(substr.equals("not")) {
+						notCount++;
+					}
+				}
+				else if(i != str.length() - 1 && i != str.length() - 2) {
+					String substr = str.substring(i, i + 3);
+					if(substr.equals("not") && str.charAt(i - 1) == ' ') {
+						notCount++;
+					}
+				}
+			}
+			if(isCount == notCount) {
+				return true;
+			}
+			else {
+				return false;
+			}
 		}
 	}
 }
