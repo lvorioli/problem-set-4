@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.countMe("hi there harri "));
+		System.out.println(ps4.countMe("one more batch of sample words", '+'));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -109,14 +109,19 @@ public class ProblemSet4 {
 	}
 	
 	public int countMe(String text, char end) {
-		if(text.isEmpty()) {
+		if(text.isEmpty() || Character.isLetter(end) == false) {
 			return -1;
 		}
 		else {
 			int count = 0;
 			for(int i = 0; i < text.length(); i++) {
-				if(text.charAt(x + 1) == ' ' && text.charAt(x) = end) {
-					count++;
+				if(text.charAt(i) == end) {
+					if(i == text.length() - 1) {
+						count++;
+					}
+					else if(text.charAt(i + 1) == ' ') {
+						count++;
+					}
 				}
 			}
 			return count;
