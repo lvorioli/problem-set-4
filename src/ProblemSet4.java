@@ -22,7 +22,7 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.triplets("aaabbbbccccc"));
+		System.out.println(ps4.addMe("a123b456c789", false));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -221,7 +221,7 @@ public class ProblemSet4 {
 			if(digits == true) {
 				for(int i = 0; i < str.length(); i++) {
 					if(Character.isDigit(str.charAt(i))) {
-						sum += (str.charAt(i) - 0);
+						sum += Character.getNumericValue(str.charAt(i));
 					}
 				}
 			}
@@ -241,6 +241,7 @@ public class ProblemSet4 {
 					else {
 						reset = true;
 					}
+					sum += Integer.parseInt(numTemp);
 				}
 			}
 			return sum;
