@@ -205,4 +205,45 @@ public class ProblemSet4 {
 			return count;
 		}
 	}
+	
+	public int addMe(String str, boolean digits) {
+		boolean valid = true;
+		for(int i = 0; i < str.length(); i++) {
+			if(Character.isWhitespace(str.charAt(i)) == true) {
+				valid = false;
+			}
+		}
+		if(str.isEmpty() || valid == false) {
+			return -1;
+		}
+		else {
+			int sum = 0;
+			if(digits == true) {
+				for(int i = 0; i < str.length(); i++) {
+					if(Character.isDigit(str.charAt(i))) {
+						sum += (str.charAt(i) - 0);
+					}
+				}
+			}
+			else {
+				boolean reset = false;
+				String numTemp = "";
+				for(int i = 0; i < str.length(); i++) {
+					if(Character.isDigit(str.charAt(i))) {
+						if(reset == true) {
+							numTemp = str.substring(i, i + 1);
+							reset = false;
+						}
+						else {
+							numTemp = numTemp + str.substring(i, i + 1);
+						}
+					}
+					else {
+						reset = true;
+					}
+				}
+			}
+			return sum;
+		}
+	}
 }
