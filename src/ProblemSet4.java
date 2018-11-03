@@ -22,7 +22,6 @@ public class ProblemSet4 {
 	
 	public static void main(String[] args) {
 		ProblemSet4 ps4 = new ProblemSet4();
-		System.out.println(ps4.addMe("a123b456c789", false));
 	}
 	
 	public String surroundMe(String out, String in) {
@@ -90,18 +89,13 @@ public class ProblemSet4 {
 	
 	public int upOrDown(double number, char operation) {
 		if(operation == 'r') {
-			if(number - (int) number >= .5) {
-				return (int) number + 1;
-			}
-			else {
-				return (int) number;
-			}
+			return (int) Math.round(number);
 		}
 		else if(operation == 'f') {
-			return (int) number;
+			return (int) Math.floor(number);
 		}
 		else if(operation == 'c') {
-			return (int) number + 1;
+			return (int) Math.ceil(number);
 		}
 		else {
 			return -1;
